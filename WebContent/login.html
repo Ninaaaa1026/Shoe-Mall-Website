@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<title>登录ShoeMall</title>
+<link type="text/css" rel="stylesheet" href="css/login.css"></link>
+<script>
+	function login() {
+		var loginName = document.formlogin.loginName.value;
+		var password = document.formlogin.password.value;
+		if (loginName == null || loginName == "") {
+			alert("Please input the e-mail address!");
+			return;
+		} 
+		else if (password == null || password == "") {
+			alert("Please input the password!");
+			return;
+		} 
+		else {
+			window.location.href = 'User?action=login&loginName='
+					+ loginName + '&password=' + password;
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="w">
+		<div id="logo">
+			<a href="shoemall.jsp"><img src="img/shoemall.jpg" width="170" height="60"></img></a><b></b>
+		</div>
+	</div>
+	<form name="formlogin" method="post" action="User?action=login">
+		<input type="hidden" id="uuid" name="uuid"
+			value="66418ba2-dbc1-4fab-9391-0b7d71ee2c04"></input>
+		<div class=" w1" id="entry">
+			<div class="mc " id="bgDiv">
+				<div id="entry-bg" clstag="passport|keycount|login|02"
+					style="width: 511px; height: 455px; background-image: url(img/login.jpg);  position: absolute; left: 7px; top:6px; background-position: 0px 0px; background-repeat: no-repeat no-repeat; ">
+				</div>
+				<div class="form ">
+					<div class="item fore1">
+						<span>邮箱</span>
+						<div class="item-ifo">
+							<input type="text" id="loginname" name="loginName" class="text"
+								tabindex="1" autocomplete="off" sta="0"></input>
+							<div class="i-name ico"></div>
+							<label id="loginname_succeed" class="blank invisible"></label> <label
+								id="loginname_error" class="focus"></label>
+						</div>
+					</div>
+					<div class="item fore2">
+						<span>密码</span>
+						<div class="item-ifo">
+							<label id="sloginpwd" style="display: none;"> 
+							</label> <input type="password" id="nloginpwd" name="password"
+								class="text" tabindex="2"></input>
+							<div class="i-pass ico"></div>
+						</div>
+					</div>
+					<div class="item login-btn2013">
+						<input type="button" class="btn-img btn-entry" id="loginsubmit"
+							value="登录" tabindex="8" onclick="login();"
+							clstag="passport|keycount|login|06"></input>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div class="w1">
+		<div id="mb-bg" class="mb"></div>
+	</div>
+	<div class="w">
+		<div id="footer-2013">
+			<div id="webfooter1">关于我们|联系我们|人才招聘|商家入驻|广告服务|友情链接|销售联盟</div>
+			<div class="copyright">Copyright©2004-2014&nbsp;&nbsp;ShoeMall.com&nbsp;版权所有</div>
+		</div>
+	</div>
+</body>
+</html>
